@@ -32,9 +32,8 @@ public class Bishop extends Piece
                 
                 if(abs(getBoard().getTile(i, j).getX() - this.getX()) == abs(getBoard().getTile(i,j).getY() - this.getY()))
                 {
-                    if(getColor().equals("White")){
                         if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("Black")){
+                    !getBoard().getTile(i, j).getPiece().getColor().equals(this.getColor())){
                         getBoard().getTile(i, j).toggle();
                         getBoard().getTile(i, j).setMovablePiece(this);
                         }
@@ -48,27 +47,6 @@ public class Bishop extends Piece
                             lastMove = true;
                             break;
                         }
-                        
-                    }
-                    else
-                    {
-                        if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("White")){
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        if(getBoard().getTile(i, j).getPiece() == null )
-                        {
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        else
-                        {
-                            lastMove = true;
-                            break;
-                        }
-                    }
-
                 }
             }
             if(lastMove){
@@ -82,11 +60,11 @@ public class Bishop extends Piece
             {
                 if(i == this.getX() & j == this.getY())
                     continue;
+                
                 if(abs(getBoard().getTile(i, j).getX() - this.getX()) == abs(getBoard().getTile(i,j).getY() - this.getY()))
                 {
-                    if(getColor().equals("White")){
                         if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("Black")){
+                    !getBoard().getTile(i, j).getPiece().getColor().equals(this.getColor())){
                         getBoard().getTile(i, j).toggle();
                         getBoard().getTile(i, j).setMovablePiece(this);
                         }
@@ -100,76 +78,8 @@ public class Bishop extends Piece
                             lastMove = true;
                             break;
                         }
-                        
-                    }
-                    else
-                    {
-                        if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("White")){
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        if(getBoard().getTile(i, j).getPiece() == null )
-                        {
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        else
-                        {
-                            lastMove = true;
-                            break;
-                        }
-                    }
-
                 }
             }
-            if(lastMove){
-                lastMove= false;
-                break;}
-        }
-
-        for(int i = this.getX() ; i < 8 ; i++)
-        {
-            for(int j = this.getY() ; j >= 0 ; j--)
-            {
-                if(i == this.getX() & j == this.getY())
-                    continue;
-                if(abs(getBoard().getTile(i, j).getX() - this.getX()) == abs(getBoard().getTile(i,j).getY() - this.getY()))
-                    if(getColor().equals("White")){
-                        if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("Black")){
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        if(getBoard().getTile(i, j).getPiece() == null )
-                        {
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        else
-                        {lastMove = true;
-                            break;}
-                        
-                    }
-                    else
-                    {
-                        if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("White")){
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        if(getBoard().getTile(i, j).getPiece() == null )
-                        {
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        else
-                        {lastMove = true;
-                            break;}
-                    }
-
-                }
-            
             if(lastMove){
                 lastMove= false;
                 break;}
@@ -180,10 +90,11 @@ public class Bishop extends Piece
             {
                 if(i == this.getX() & j == this.getY())
                     continue;
+                
                 if(abs(getBoard().getTile(i, j).getX() - this.getX()) == abs(getBoard().getTile(i,j).getY() - this.getY()))
-                    if(getColor().equals("White")){
+                {
                         if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("Black")){
+                    !getBoard().getTile(i, j).getPiece().getColor().equals(this.getColor())){
                         getBoard().getTile(i, j).toggle();
                         getBoard().getTile(i, j).setMovablePiece(this);
                         }
@@ -193,33 +104,45 @@ public class Bishop extends Piece
                         getBoard().getTile(i, j).setMovablePiece(this);
                         }
                         else
-                        {lastMove = true;
-                            break;}
-                        
-                    }
-                    else
-                    {
-                        if(getBoard().getTile(i, j).getPiece() != null &&
-                    getBoard().getTile(i, j).getPiece().getColor().equals("White")){
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
-                        }
-                        if(getBoard().getTile(i, j).getPiece() == null )
                         {
-                        getBoard().getTile(i, j).toggle();
-                        getBoard().getTile(i, j).setMovablePiece(this);
+                            lastMove = true;
+                            break;
                         }
-                        else
-                        {lastMove = true;
-                            break;}
-                    }
-
                 }
-            
+            }
             if(lastMove){
                 lastMove= false;
                 break;}
         }
-
+        for(int i = this.getX() ; i < 8 ; i++)
+        {
+            for(int j = this.getY() ; j >= 0 ; j--)
+            {
+                if(i == this.getX() & j == this.getY())
+                    continue;
+                
+                if(abs(getBoard().getTile(i, j).getX() - this.getX()) == abs(getBoard().getTile(i,j).getY() - this.getY()))
+                {
+                        if(getBoard().getTile(i, j).getPiece() != null &&
+                    !getBoard().getTile(i, j).getPiece().getColor().equals(this.getColor())){
+                        getBoard().getTile(i, j).toggle();
+                        getBoard().getTile(i, j).setMovablePiece(this);
+                        }
+                        if(getBoard().getTile(i, j).getPiece() == null )
+                        {
+                        getBoard().getTile(i, j).toggle();
+                        getBoard().getTile(i, j).setMovablePiece(this);
+                        }
+                        else
+                        {
+                            lastMove = true;
+                            break;
+                        }
+                }
+            }
+            if(lastMove){
+                lastMove= false;
+                break;}
+        }
     }
 }
